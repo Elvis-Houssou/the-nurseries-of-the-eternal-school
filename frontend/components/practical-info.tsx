@@ -1,0 +1,236 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { Card } from '@/components/ui/card'
+import { Calendar, Shirt, Banknote, Clock, FileText, Utensils } from 'lucide-react'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+}
+
+export function PracticalInfo() {
+  return (
+    <section id="practical" className="py-20 md:py-28 bg-gradient-to-br from-blue-50 to-green-50 relative overflow-hidden">
+      {/* Background animations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute top-10 left-10 w-40 h-40 rounded-full bg-primary/5"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-secondary/5"
+          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="inline-block bg-accent-blue/10 text-accent-blue px-4 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            Guide Pratique
+          </motion.span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Informations Pratiques
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Tout ce que vous devez savoir pour inscrire votre enfant
+          </p>
+        </motion.div>
+
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {/* Calendar */}
+          <motion.div variants={cardVariants}>
+            <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
+              <motion.div 
+                className="flex items-center gap-4 mb-5"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-primary w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Calendar className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Calendrier Scolaire</h3>
+              </motion.div>
+              <div className="space-y-3 pl-2 border-l-2 border-primary/20">
+                <div>
+                  <p className="font-semibold text-foreground">Ann&eacute;e Scolaire 2025-2026</p>
+                  <p className="text-muted-foreground">1er lundi d&apos;octobre - 31 mai</p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Hours */}
+          <motion.div variants={cardVariants}>
+            <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
+              <motion.div 
+                className="flex items-center gap-4 mb-5"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-accent-blue w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Clock className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Horaires</h3>
+              </motion.div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground font-medium">Journ&eacute;e compl&egrave;te</span>
+                  <span className="text-primary font-bold">7h30 - 18h</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground font-medium">Demi-journ&eacute;e</span>
+                  <span className="text-primary font-bold">7h30 - 12h</span>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Uniforms */}
+          <motion.div variants={cardVariants}>
+            <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
+              <motion.div 
+                className="flex items-center gap-4 mb-5"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Shirt className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Tenue Scolaire</h3>
+              </motion.div>
+              <div className="space-y-4 text-sm">
+                <div className="p-3 bg-pink-50 rounded-lg">
+                  <p className="font-semibold text-foreground mb-1">Filles</p>
+                  <p className="text-muted-foreground">Robe ou jupe carreaux vert-blanc</p>
+                </div>
+                <div className="p-3 bg-blue-50 rounded-lg">
+                  <p className="font-semibold text-foreground mb-1">Gar&ccedil;ons</p>
+                  <p className="text-muted-foreground">Culotte kaki + haut vert-blanc</p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Pricing Creche/Garderie */}
+          <motion.div variants={cardVariants}>
+            <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
+              <motion.div 
+                className="flex items-center gap-4 mb-5"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-accent w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Banknote className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Tarifs Cr&egrave;che-Garderie</h3>
+              </motion.div>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground">1 Journ&eacute;e (7h30-18h)</span>
+                  <span className="font-bold text-primary">5 000 FCFA</span>
+                </div>
+                <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground">Demi-journ&eacute;e</span>
+                  <span className="font-bold text-primary">3 000 FCFA</span>
+                </div>
+                <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground">Semaine</span>
+                  <span className="font-bold text-primary">15 000 FCFA</span>
+                </div>
+                <div className="flex justify-between p-3 bg-primary/10 rounded-lg">
+                  <span className="text-foreground font-medium">Mensuel</span>
+                  <span className="font-bold text-primary">25 000 FCFA</span>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Cantine */}
+          <motion.div variants={cardVariants}>
+            <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
+              <motion.div 
+                className="flex items-center gap-4 mb-5"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-primary w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Utensils className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Cantine</h3>
+              </motion.div>
+              <div className="p-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl">
+                <p className="text-3xl font-bold text-primary mb-1">15 000 FCFA</p>
+                <p className="text-muted-foreground">par mois</p>
+                <p className="text-sm text-muted-foreground mt-3">
+                  Repas &eacute;quilibr&eacute;s et adapt&eacute;s &agrave; chaque tranche d&apos;&acirc;ge
+                </p>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Inscription */}
+          <motion.div variants={cardVariants}>
+            <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
+              <motion.div 
+                className="flex items-center gap-4 mb-5"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-accent-blue w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <FileText className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Inscription</h3>
+              </motion.div>
+              <div className="space-y-3">
+                <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground">Pr&eacute;scolaire</span>
+                  <span className="font-bold text-primary">20 000 FCFA</span>
+                </div>
+                <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground">Cr&egrave;che</span>
+                  <span className="font-bold text-primary">20 000 FCFA</span>
+                </div>
+                <p className="text-xs text-muted-foreground mt-2 p-2 bg-accent/10 rounded-lg">
+                  Frais d&apos;inscription uniques par ann&eacute;e scolaire
+                </p>
+              </div>
+            </Card>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
