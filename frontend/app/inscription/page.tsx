@@ -185,9 +185,9 @@ export default function InscriptionPage() {
                       className="w-full px-4 py-2 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                     >
                       <option value="">Choisir un programme</option>
-                      <option value="creche">Crèche (2 mois - 18 mois)</option>
-                      <option value="prescolaire">Préscolaire (18 mois - 3 ans)</option>
-                      <option value="garderie">Garderie Éducative (2 ans - 3 ans)</option>
+                      <option value="creche">Crèche (2 mois - 18 mois) - 30 000 FCFA/mois</option>
+                      <option value="garderie">Garderie Éducative (à partir de 19 mois) - 25 000 FCFA/mois</option>
+                      <option value="prescolaire">Préscolaire (à partir de 3 ans) - 80 000 FCFA/an</option>
                     </select>
                   </div>
                 </div>
@@ -213,13 +213,42 @@ export default function InscriptionPage() {
                   </div>
                 </div>
 
+                {/* Pricing Summary */}
+                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-foreground mb-4">
+                    Récapitulatif des Tarifs
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                    <div className="bg-white p-4 rounded-lg">
+                      <p className="font-semibold text-foreground">Crèche (2-18 mois)</p>
+                      <p className="text-2xl font-bold text-primary">30 000 FCFA/mois</p>
+                      <p className="text-muted-foreground">Inscription: 20 000 FCFA</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg">
+                      <p className="font-semibold text-foreground">Garderie (19+ mois)</p>
+                      <p className="text-2xl font-bold text-primary">25 000 FCFA/mois</p>
+                      <p className="text-muted-foreground">Inscription: 20 000 FCFA</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg">
+                      <p className="font-semibold text-foreground">Préscolaire</p>
+                      <p className="text-2xl font-bold text-primary">80 000 FCFA/an</p>
+                      <p className="text-muted-foreground">Frais annexes: 15 000 FCFA</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg">
+                      <p className="font-semibold text-foreground">Cantine</p>
+                      <p className="text-2xl font-bold text-primary">15 000 FCFA/mois</p>
+                      <p className="text-muted-foreground">Repas équilibrés inclus</p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Required Documents Notice */}
                 <div className="bg-blue-50 border-l-4 border-primary p-4 rounded">
                   <p className="text-sm text-foreground font-semibold mb-2">
                     Documents Requis pour l&apos;Inscription:
                   </p>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Certifikat de naissance de l&apos;enfant</li>
+                    <li>• Certificat de naissance de l&apos;enfant</li>
                     <li>• Dossier d&apos;agrément ministériel</li>
                     <li>• Preuve de vaccination</li>
                     <li>• Informations médicales pertinentes</li>

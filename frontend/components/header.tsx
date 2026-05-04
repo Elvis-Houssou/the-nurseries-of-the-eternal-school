@@ -1,12 +1,41 @@
 'use client'
 
-import { Menu, X } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useState } from 'react'
 import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
+    if (isHomePage) {
+      e.preventDefault()
+      const element = document.getElementById(anchor)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+      setIsOpen(false)
+    } else {
+      setIsOpen(false)
+    }
+  }
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
+
+  const navLinks = [
+    { href: isHomePage ? '#about' : '/#about', anchor: 'about', label: 'À Propos' },
+    { href: isHomePage ? '#services' : '/#services', anchor: 'services', label: 'Services' },
+    { href: isHomePage ? '#practical' : '/#practical', anchor: 'practical', label: 'Infos Pratiques' },
+    { href: '/reglement-interieur', anchor: '', label: 'Règlement', isPage: true },
+    { href: isHomePage ? '#contact' : '/#contact', anchor: 'contact', label: 'Contact' },
+  ]
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
@@ -14,7 +43,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-12 h-12 relative">
             <Image
-              src="/logo.png"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DS6DK28wHgPetJXmjCs5sYISM0Ugal.png"
               alt="Logo Les Pépinières"
               fill
               className="object-contain"
@@ -27,24 +56,19 @@ export function Header() {
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
-            À Propos
-          </Link>
-          <Link href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
-            Services
-          </Link>
-          <Link href="#practical" className="text-foreground hover:text-primary transition-colors font-medium">
-            Infos Pratiques
-          </Link>
-          <Link href="/reglement-interieur" className="text-foreground hover:text-primary transition-colors font-medium">
-            Règlement
-          </Link>
-          <Link href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
-            Contact
-          </Link>
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={link.isPage ? undefined : (e) => handleNavClick(e, link.anchor)}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
-            href="#contact"
+            href="/inscription"
             className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity"
           >
             Inscription
@@ -64,43 +88,18 @@ export function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <nav className="md:hidden bg-white border-t border-border px-4 py-4 flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={link.isPage ? () => setIsOpen(false) : (e) => handleNavClick(e, link.anchor)}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
-            href="#about"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            À Propos
-          </Link>
-          <Link
-            href="#services"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Services
-          </Link>
-          <Link
-            href="#practical"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Infos Pratiques
-          </Link>
-          <Link
-            href="/reglement-interieur"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Règlement
-          </Link>
-          <Link
-            href="#contact"
-            className="text-foreground hover:text-primary transition-colors font-medium"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact
-          </Link>
-          <Link
-            href="#contact"
+            href="/inscription"
             className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity text-center"
             onClick={() => setIsOpen(false)}
           >
