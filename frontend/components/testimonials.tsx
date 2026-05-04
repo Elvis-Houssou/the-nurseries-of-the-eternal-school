@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: 'Mme Kouadio',
     relation: 'Mère de Yves (Crèche)',
-    text: "Les PEPINIÈRES est un véritable refuge pour mon enfant. L'équipe est si attentive et bienveillante. Je vois les progrès de mon fils chaque jour!",
+    text: "LES PEPINIÈRES DE L'ETERNEL est un véritable refuge pour mon enfant. L'équipe est si attentive et bienveillante. Je vois les progrès de mon fils chaque jour!",
     rating: 5,
     color: 'from-primary/10 to-primary/5',
   },

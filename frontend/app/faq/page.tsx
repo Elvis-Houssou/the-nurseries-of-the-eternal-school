@@ -1,9 +1,10 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Card } from '@/components/ui/card'
-import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 interface FAQItem {
@@ -13,27 +14,27 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: 'Quel est l&apos;âge minimum pour l&apos;inscription?',
-    answer: 'Notre programme de crèche accepte les enfants à partir de 2 mois. Pour les autres programmes, l&apos;âge minimum est 18 mois pour le préscolaire et 2 ans pour la garderie éducative.',
+    question: "Quel est l'âge minimum pour l'inscription?",
+    answer: "Notre programme de crèche accepte les enfants à partir de 2 mois. Pour les autres programmes, l'âge minimum est 18 mois pour le préscolaire et 2 ans pour la garderie éducative.",
   },
   {
-    question: 'Quels sont les horaires d&apos;ouverture?',
+    question: "Quels sont les horaires d'ouverture?",
     answer: 'Nous sommes ouverts de 7h30 à 18h00, du lundi au vendredi. Nous offrons également des services de garde supplémentaires sur demande.',
   },
   {
-    question: 'Quels sont les coûts d&apos;inscription?',
-    answer: 'L&apos;inscription pour le préscolaire et la crèche est de 20 000 FCFA. La cantine coûte 15 000 FCFA par mois. Des tarifs mensuels supplémentaires s&apos;appliquent selon le programme choisi.',
+    question: 'Quels sont les coûts d\'inscription?',
+    answer: 'L\'inscription pour le préscolaire et la crèche est de 20 000 FCFA. La cantine coûte 15 000 FCFA par mois. Des tarifs mensuels supplémentaires s\'appliquent selon le programme choisi.',
   },
   {
     question: 'Y a-t-il des activités extrascolaires?',
-    answer: 'Oui! Nous proposons des activités artistiques, musicales, et de développement moteur adaptées à chaque groupe d&apos;âge.',
+    answer: 'Oui! Nous proposons des activités artistiques, musicales, et de développement moteur adaptées à chaque groupe d\'âge.',
   },
   {
-    question: 'Que se passe-t-il en cas d&apos;urgence médicale?',
-    answer: 'Notre personnel est formé aux premiers secours. En cas d&apos;urgence sérieuse, nous contactons immédiatement les parents et les services médicaux d&apos;urgence.',
+    question: 'Que se passe-t-il en cas d\'urgence médicale?',
+    answer: 'Notre personnel est formé aux premiers secours. En cas d\'urgence sérieuse, nous contactons immédiatement les parents et les services médicaux d\'urgence.',
   },
   {
-    question: 'Puis-je visiter l&apos;établissement avant d&apos;inscrire mon enfant?',
+    question: 'Puis-je visiter l\'établissement avant d\'inscrire mon enfant?',
     answer: 'Absolument! Nous encourageons les parents à visiter notre établissement. Veuillez nous contacter pour prendre rendez-vous.',
   },
   {
@@ -41,12 +42,12 @@ const faqItems: FAQItem[] = [
     answer: 'Nous communiquons régulièrement via WhatsApp, email et appels téléphoniques. Nous partageons aussi des photos et vidéos du développement de votre enfant.',
   },
   {
-    question: 'Quels documents sont nécessaires pour l&apos;inscription?',
-    answer: 'Vous aurez besoin du certificat de naissance de l&apos;enfant, du dossier d&apos;agrément ministériel, de la preuve de vaccination et des informations médicales pertinentes.',
+    question: 'Quels documents sont nécessaires pour l\'inscription?',
+    answer: 'Vous aurez besoin du certificat de naissance de l\'enfant, du dossier d\'agrément ministériel, de la preuve de vaccination et des informations médicales pertinentes.',
   },
   {
-    question: 'Y a-t-il une période d&apos;adaptation?',
-    answer: 'Oui, nous proposons une période d&apos;adaptation progressive pour aider l&apos;enfant à s&apos;adapter progressivement à son nouvel environnement.',
+    question: 'Y a-t-il une période d\'adaptation?',
+    answer: 'Oui, nous proposons une période d\'adaptation progressive pour aider l\'enfant à s\'adapter progressivement à son nouvel environnement.',
   },
   {
     question: 'Acceptez-vous les repas apportés de la maison?',
@@ -56,6 +57,27 @@ const faqItems: FAQItem[] = [
 
 export default function FAQPage() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const isFaq = pathname === '/faq'
+  
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
+    if (isFaq) {
+      e.preventDefault()
+      const element = document.getElementById(anchor)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+      setIsOpen(false)
+    } else {
+      setIsOpen(false)
+    }
+  }
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
     <main>
@@ -114,7 +136,7 @@ export default function FAQPage() {
               N&apos;hésitez pas à nous contacter directement. Notre équipe est prête à répondre à toutes vos questions.
             </p>
             <a
-              href="#contact"
+              href={isFaq ? "/#contact" : "#contact"}
               className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
             >
               Nous Contacter

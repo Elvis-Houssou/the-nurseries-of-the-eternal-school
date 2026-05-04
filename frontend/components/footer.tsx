@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="bg-foreground text-white py-12">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
-          <h3 className="text-xl font-bold mb-4 text-secondary">Les Pépinières</h3>
+          <h3 className="text-xl font-bold mb-4 text-secondary">Les Pépinières de l'Éternel</h3>
           <p className="text-gray-300 mb-4">
             Centre de Protection de la Petite Enfance Privé
           </p>
@@ -43,6 +43,11 @@ export function Footer() {
             <li>
               <Link href="#practical" className="hover:text-secondary transition-colors">
                 Infos Pratiques
+              </Link>
+            </li>
+            <li>
+              <Link href="/faq" className="hover:text-secondary transition-colors">
+                FAQ
               </Link>
             </li>
           </ul>
