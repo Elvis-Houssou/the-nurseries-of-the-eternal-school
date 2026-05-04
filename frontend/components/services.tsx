@@ -16,28 +16,31 @@ const services = [
     hoverColor: 'hover:bg-primary/90',
     Icon: Baby,
     price: '30 000 FCFA/mois',
-  },
-  {
-    id: 'prescolaire',
-    title: 'Préscolaire',
-    age: '18 mois à 3 ans',
-    description: 'Programme éducatif structuré favorisant le développement cognitif et moteur.',
-    features: ['Apprentissage ludique', 'Développement moteur', 'Socialisation', 'Créativité'],
-    color: 'bg-secondary',
-    hoverColor: 'hover:bg-secondary/90',
-    Icon: Palette,
-    price: '25 000 FCFA/mois',
+    inscription: '20 000 FCFA',
   },
   {
     id: 'garderie',
     title: 'Garderie Éducative',
-    age: '2 ans à 3 ans',
+    age: 'À partir de 19 mois',
     description: 'Service de garderie combinant sécurité et éducation avec des activités enrichissantes.',
     features: ['Horaires flexibles', 'Activités éducatives', 'Nutrition adaptée', 'Suivi personnalisé'],
-    color: 'bg-accent',
-    hoverColor: 'hover:bg-accent/90',
+    color: 'bg-secondary',
+    hoverColor: 'hover:bg-secondary/90',
     Icon: GraduationCap,
     price: '25 000 FCFA/mois',
+    inscription: '20 000 FCFA',
+  },
+  {
+    id: 'prescolaire',
+    title: 'Préscolaire',
+    age: 'À partir de 3 ans',
+    description: 'Programme éducatif structuré favorisant le développement cognitif et moteur.',
+    features: ['Apprentissage ludique', 'Développement moteur', 'Socialisation', 'Créativité'],
+    color: 'bg-accent',
+    hoverColor: 'hover:bg-accent/90',
+    Icon: Palette,
+    price: '25 000 FCFA/mois',
+    inscription: 'Frais annexes: 15 000 FCFA',
   },
 ]
 
@@ -105,6 +108,7 @@ export function Services() {
           </p>
         </motion.div>
 
+
         <motion.div 
           className="grid md:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -143,9 +147,14 @@ export function Services() {
                     <p className="text-sm font-semibold text-primary mb-2">
                       {service.age}
                     </p>
-                    <p className="text-lg font-bold text-secondary mb-4">
-                      {service.price}
-                    </p>
+                    <div className="mb-4">
+                      <p className="text-lg font-bold text-secondary">
+                        {service.price}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Inscription: {service.inscription}
+                      </p>
+                    </div>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
                       {service.description}
                     </p>

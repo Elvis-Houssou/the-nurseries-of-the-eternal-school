@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
-import { Calendar, Shirt, Banknote, Clock, FileText, Utensils } from 'lucide-react'
+import Link from 'next/link'
+import { Calendar, Shirt, Banknote, Clock, FileText, Utensils, BookOpen, ArrowRight } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -155,24 +156,20 @@ export function PracticalInfo() {
                 <div className="bg-accent w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                   <Banknote className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Tarifs Cr&egrave;che-Garderie</h3>
+                <h3 className="text-xl font-bold text-foreground">Tarifs Mensuels</h3>
               </motion.div>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
-                  <span className="text-foreground">1 Journ&eacute;e (7h30-18h)</span>
-                  <span className="font-bold text-primary">5 000 FCFA</span>
+                  <span className="text-foreground">Crèche (2-18 mois)</span>
+                  <span className="font-bold text-primary">30 000 FCFA</span>
                 </div>
                 <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
-                  <span className="text-foreground">Demi-journ&eacute;e</span>
-                  <span className="font-bold text-primary">3 000 FCFA</span>
-                </div>
-                <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
-                  <span className="text-foreground">Semaine</span>
-                  <span className="font-bold text-primary">15 000 FCFA</span>
+                  <span className="text-foreground">Garderie (19+ mois)</span>
+                  <span className="font-bold text-primary">25 000 FCFA</span>
                 </div>
                 <div className="flex justify-between p-3 bg-primary/10 rounded-lg">
-                  <span className="text-foreground font-medium">Mensuel</span>
-                  <span className="font-bold text-primary">25 000 FCFA</span>
+                  <span className="text-foreground font-medium">Préscolaire/an</span>
+                  <span className="font-bold text-primary">80 000 FCFA</span>
                 </div>
               </div>
             </Card>
@@ -216,19 +213,37 @@ export function PracticalInfo() {
               </motion.div>
               <div className="space-y-3">
                 <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
-                  <span className="text-foreground">Pr&eacute;scolaire</span>
+                  <span className="text-foreground">Crèche / Garderie</span>
                   <span className="font-bold text-primary">20 000 FCFA</span>
                 </div>
                 <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
-                  <span className="text-foreground">Cr&egrave;che</span>
-                  <span className="font-bold text-primary">20 000 FCFA</span>
+                  <span className="text-foreground">Frais annexes</span>
+                  <span className="font-bold text-primary">15 000 FCFA</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-2 p-2 bg-accent/10 rounded-lg">
-                  Frais d&apos;inscription uniques par ann&eacute;e scolaire
+                  Frais d&apos;inscription uniques par année scolaire
                 </p>
               </div>
             </Card>
           </motion.div>
+        </motion.div>
+
+        {/* Link to Rules */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <Link 
+            href="/reglement-interieur"
+            className="inline-flex items-center gap-3 bg-white border-2 border-primary text-primary px-8 py-4 rounded-2xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl group"
+          >
+            <BookOpen className="w-5 h-5" />
+            Consulter le Règlement Intérieur
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </motion.div>
       </div>
     </section>

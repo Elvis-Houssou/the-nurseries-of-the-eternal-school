@@ -37,6 +37,9 @@ export function Header() {
           <Link href="#practical" className="text-foreground hover:text-primary transition-colors font-medium">
             Infos Pratiques
           </Link>
+          <Link href="/reglement-interieur" className="text-foreground hover:text-primary transition-colors font-medium">
+            Règlement
+          </Link>
           <Link href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
             Contact
           </Link>
@@ -81,6 +84,13 @@ export function Header() {
             onClick={() => setIsOpen(false)}
           >
             Infos Pratiques
+          </Link>
+          <Link
+            href="/reglement-interieur"
+            className="text-foreground hover:text-primary transition-colors font-medium"
+            onClick={() => setIsOpen(false)}
+          >
+            Règlement
           </Link>
           <Link
             href="#contact"
