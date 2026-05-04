@@ -94,7 +94,7 @@ const articles = [
     title: "Autorité Parentale",
     subtitle: "J'informe l'école de mes changements de situation personnelle",
     icon: Shield,
-    color: "bg-[oklch(var(--accent-blue))]",
+    color: "bg-accent-blue",
     content: [
       "Les deux parents ont les mêmes droits et devoirs pour élever et protéger leur enfant.",
       "Le directeur de l'école est en relation avec les 2 parents et doit être informé des changements importants (déménagement, séparation...).",
@@ -146,7 +146,7 @@ const articles = [
     title: "Vêtements",
     subtitle: "Je fais attention aux vêtements que porte mon enfant",
     icon: Shirt,
-    color: "bg-[oklch(var(--accent-blue))]",
+    color: "bg-accent-blue",
     content: [
       "Une tenue confortable (ni bretelles, ni ceinture...)",
       "Des chaussures fermées (ni talons, ni tongs, ni bottes de pluie)",
@@ -205,7 +205,7 @@ const articles = [
     title: "Conseil d'École",
     subtitle: "Je peux rejoindre le conseil d'école et/ou l'association des parents d'élèves",
     icon: UsersRound,
-    color: "bg-[oklch(var(--accent-blue))]",
+    color: "bg-accent-blue",
     content: [
       "En tant que parent, je peux demander à faire partie du conseil d'école (élection annuelle en octobre) ou de l'association des parents d'élèves.",
       "Le conseil d'école se réunit 3 fois par an.",
