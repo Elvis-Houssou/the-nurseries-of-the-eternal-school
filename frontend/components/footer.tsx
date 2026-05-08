@@ -12,11 +12,11 @@ export function Footer() {
           </p>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <MapPin size={18} className="text-secondary" />
-              <span className="text-sm">Carrefour Académie, Cité Cnps Lot 10, La Roche Bétassaïda</span>
+              <MapPin size={20} className="text-secondary flex-shrink-0" />
+              <span className="text-sm">Carrefour Académie, Cité Cnps Lot 10,Face a la clinique Médicale La Roche Bétassaïda</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone size={18} className="text-secondary" />
+              <Phone size={20} className="text-secondary flex-shrink-0" />
               <span className="text-sm">01 03 33 30 67 / 07 49 69 07 01</span>
             </div>
           </div>
