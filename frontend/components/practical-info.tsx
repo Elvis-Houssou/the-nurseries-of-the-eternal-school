@@ -200,8 +200,12 @@ export function PracticalInfo() {
                   <span className="font-bold text-primary">80 000 FCFA</span>
                 </div>
                 <div className="flex justify-between p-3 bg-primary/10 rounded-lg">
-                  <span className="text-foreground font-medium">Primaire CP/an</span>
+                  <span className="text-foreground font-medium">Primaire CP1/an</span>
                   <span className="font-bold text-primary">95 000 FCFA</span>
+                </div>
+                <div className="flex justify-between p-3 bg-primary/10 rounded-lg">
+                  <span className="text-foreground font-medium">Primaire CP2/an</span>
+                  <span className="font-bold text-primary">100 000 FCFA</span>
                 </div>
               </div>
             </Card>

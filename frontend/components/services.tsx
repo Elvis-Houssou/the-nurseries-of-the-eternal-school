@@ -51,7 +51,7 @@ const services = [
     color: 'bg-accent-blue',
     hoverColor: 'hover:bg-accent-blue/90',
     Icon: BookOpenText,
-    price: '95 000 FCFA/an',
+    price: 'CP1: 95 000 / CP2: 100 000 FCFA/an',
     inscription: 'Frais annexes: 30 000 FCFA',
   },
 ]

@@ -237,8 +237,13 @@ export default function InscriptionPage() {
                       <p className="text-muted-foreground">Frais annexes: 15 000 FCFA</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg">
-                      <p className="font-semibold text-foreground">Primaire CP1/CP2</p>
+                      <p className="font-semibold text-foreground">Primaire CP1</p>
                       <p className="text-2xl font-bold text-primary">95 000 FCFA/an</p>
+                      <p className="text-muted-foreground">Frais annexes: 30 000 FCFA</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg">
+                      <p className="font-semibold text-foreground">Primaire CP2</p>
+                      <p className="text-2xl font-bold text-primary">100 000 FCFA/an</p>
                       <p className="text-muted-foreground">Frais annexes: 30 000 FCFA</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg">
