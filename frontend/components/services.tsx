@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
-import { Baby, Palette, GraduationCap, Check, ArrowRight } from 'lucide-react'
+import { Baby, Palette, GraduationCap, Check, ArrowRight, BookOpenText } from 'lucide-react'
 import Link from 'next/link'
 
 const services = [
@@ -41,6 +41,18 @@ const services = [
     Icon: Palette,
     price: '25 000 FCFA/mois',
     inscription: 'Frais annexes: 15 000 FCFA',
+  },
+  {
+    id: 'primaire',
+    title: 'Primaire (CP1/CP2)',
+    age: '6 - 7 ans',
+    description: 'Programme primaire complet pour accompagner votre enfant dans ses premiers apprentissages fondamentaux.',
+    features: ['Enseignants qualifiés', 'Programme officiel', 'Suivi personnalisé', 'Activités périscolaires'],
+    color: 'bg-accent-blue',
+    hoverColor: 'hover:bg-accent-blue/90',
+    Icon: BookOpenText,
+    price: '95 000 FCFA/an',
+    inscription: 'Frais annexes: 30 000 FCFA',
   },
 ]
 
@@ -110,7 +122,7 @@ export function Services() {
 
 
         <motion.div 
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

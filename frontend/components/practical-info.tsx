@@ -86,14 +86,14 @@ export function PracticalInfo() {
               </motion.div>
               <div className="space-y-3 pl-2 border-l-2 border-primary/20">
                 <div>
-                  <p className="font-semibold text-foreground">Ann&eacute;e Scolaire 2025-2026</p>
+                  <p className="font-semibold text-foreground">Année Scolaire 2025-2026</p>
                   <p className="text-muted-foreground">1er lundi d&apos;octobre - 31 mai</p>
                 </div>
               </div>
             </Card>
           </motion.div>
 
-          {/* Hours */}
+          {/* Hours Maternelle */}
           <motion.div variants={cardVariants}>
             <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
               <motion.div 
@@ -104,16 +104,44 @@ export function PracticalInfo() {
                 <div className="bg-accent-blue w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                   <Clock className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Horaires</h3>
+                <h3 className="text-xl font-bold text-foreground">Horaires Maternelle</h3>
               </motion.div>
               <div className="space-y-3">
+                <p className="text-sm text-muted-foreground font-medium mb-2">Du Lundi au Vendredi</p>
                 <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                  <span className="text-foreground font-medium">Journ&eacute;e compl&egrave;te</span>
-                  <span className="text-primary font-bold">7h30 - 18h</span>
+                  <span className="text-foreground font-medium">Matin</span>
+                  <span className="text-primary font-bold">7h45 - 11h45</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                  <span className="text-foreground font-medium">Demi-journ&eacute;e</span>
-                  <span className="text-primary font-bold">7h30 - 12h</span>
+                  <span className="text-foreground font-medium">Après-midi</span>
+                  <span className="text-primary font-bold">14h00 - 16h30</span>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Hours Primaire */}
+          <motion.div variants={cardVariants}>
+            <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
+              <motion.div 
+                className="flex items-center gap-4 mb-5"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-accent w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Clock className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">Horaires Primaire</h3>
+              </motion.div>
+              <div className="space-y-3">
+                <p className="text-sm text-muted-foreground font-medium mb-2">Du Lundi au Vendredi (CP1/CP2)</p>
+                <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground font-medium">Matin</span>
+                  <span className="text-primary font-bold">7h45 - 12h00</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground font-medium">Après-midi</span>
+                  <span className="text-primary font-bold">14h00 - 17h00</span>
                 </div>
               </div>
             </Card>
@@ -138,14 +166,14 @@ export function PracticalInfo() {
                   <p className="text-muted-foreground">Robe ou jupe carreaux vert-blanc</p>
                 </div>
                 <div className="p-3 bg-blue-50 rounded-lg">
-                  <p className="font-semibold text-foreground mb-1">Gar&ccedil;ons</p>
+                  <p className="font-semibold text-foreground mb-1">Garçons</p>
                   <p className="text-muted-foreground">Culotte kaki + haut vert-blanc</p>
                 </div>
               </div>
             </Card>
           </motion.div>
 
-          {/* Pricing Creche/Garderie */}
+          {/* Pricing Summary */}
           <motion.div variants={cardVariants}>
             <Card className="h-full p-6 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 group">
               <motion.div 
@@ -167,9 +195,13 @@ export function PracticalInfo() {
                   <span className="text-foreground">Garderie (19+ mois)</span>
                   <span className="font-bold text-primary">25 000 FCFA</span>
                 </div>
-                <div className="flex justify-between p-3 bg-primary/10 rounded-lg">
-                  <span className="text-foreground font-medium">Préscolaire/an</span>
+                <div className="flex justify-between p-3 bg-muted/30 rounded-lg">
+                  <span className="text-foreground">Préscolaire/an</span>
                   <span className="font-bold text-primary">80 000 FCFA</span>
+                </div>
+                <div className="flex justify-between p-3 bg-primary/10 rounded-lg">
+                  <span className="text-foreground font-medium">Primaire CP/an</span>
+                  <span className="font-bold text-primary">95 000 FCFA</span>
                 </div>
               </div>
             </Card>
@@ -192,7 +224,7 @@ export function PracticalInfo() {
                 <p className="text-3xl font-bold text-primary mb-1">15 000 FCFA</p>
                 <p className="text-muted-foreground">par mois</p>
                 <p className="text-sm text-muted-foreground mt-3">
-                  Repas &eacute;quilibr&eacute;s et adapt&eacute;s &agrave; chaque tranche d&apos;&acirc;ge
+                  Repas équilibrés et adaptés à chaque tranche d&apos;âge
                 </p>
               </div>
             </Card>

@@ -188,6 +188,7 @@ export default function InscriptionPage() {
                       <option value="creche">Crèche (2 mois - 18 mois) - 30 000 FCFA/mois</option>
                       <option value="garderie">Garderie Éducative (à partir de 19 mois) - 25 000 FCFA/mois</option>
                       <option value="prescolaire">Préscolaire (à partir de 3 ans) - 80 000 FCFA/an</option>
+                      <option value="primaire">Primaire CP1/CP2 (6-7 ans) - 95 000 FCFA/an</option>
                     </select>
                   </div>
                 </div>
@@ -213,12 +214,13 @@ export default function InscriptionPage() {
                   </div>
                 </div>
 
+
                 {/* Pricing Summary */}
                 <div className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-xl">
                   <h3 className="text-xl font-bold text-foreground mb-4">
                     Récapitulatif des Tarifs
                   </h3>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
                     <div className="bg-white p-4 rounded-lg">
                       <p className="font-semibold text-foreground">Crèche (2-18 mois)</p>
                       <p className="text-2xl font-bold text-primary">30 000 FCFA/mois</p>
@@ -233,6 +235,11 @@ export default function InscriptionPage() {
                       <p className="font-semibold text-foreground">Préscolaire</p>
                       <p className="text-2xl font-bold text-primary">80 000 FCFA/an</p>
                       <p className="text-muted-foreground">Frais annexes: 15 000 FCFA</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg">
+                      <p className="font-semibold text-foreground">Primaire CP1/CP2</p>
+                      <p className="text-2xl font-bold text-primary">95 000 FCFA/an</p>
+                      <p className="text-muted-foreground">Frais annexes: 30 000 FCFA</p>
                     </div>
                     <div className="bg-white p-4 rounded-lg">
                       <p className="font-semibold text-foreground">Cantine</p>
