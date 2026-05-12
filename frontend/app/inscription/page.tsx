@@ -188,7 +188,8 @@ export default function InscriptionPage() {
                       <option value="creche">Crèche (2 mois - 18 mois) - 30 000 FCFA/mois</option>
                       <option value="garderie">Garderie Éducative (à partir de 19 mois) - 25 000 FCFA/mois</option>
                       <option value="prescolaire">Préscolaire (à partir de 3 ans) - 80 000 FCFA/an</option>
-                      <option value="primaire">Primaire CP1/CP2 (6-7 ans) - 95 000 FCFA/an</option>
+                      <option value="primaire-cp1">Primaire CP1 (6 ans) - 95 000 FCFA/an</option>
+                      <option value="primaire-cp2">Primaire CP2 (7 ans) - 100 000 FCFA/an</option>
                     </select>
                   </div>
                 </div>
